@@ -1,10 +1,166 @@
 <!doctype html>
 <html>
 <head>
-	<title>Assignment 1</title>	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+  <title>COG SCI 121 Assignment 2</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.poptrox.min.js"></script>
+  <script src="js/skel.min.js"></script>
+  <script src="js/init.js"></script>
+
+  <style>
+  h1,h2{
+    font-weight:900;
+    color:inherit;
+    font-size: 2.25em;
+    letter-spacing: -2px;
+    line-height: 1.25em;
+  }
+
+  p{
+    margin-bottom: 1em;
+  }
+
+  header{
+    margin-bottom:1em;
+  }
+
+  .container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  /* Modifiers */
+  
+    .container.small {
+      width: 900px;
+    }
+
+    .container.big {
+      width: 100%;
+      max-width: 1500px;
+      min-width: 1200px;
+    }
+
+    /* Main */
+    
+    .main {
+      position: relative;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    
+      .main.style1 {
+        text-align: center;
+        padding: 10em 0 10em 0;
+      }
+      
+        .main.style1 h2 {
+          font-size: 4.25em;
+          line-height: 1em;
+          letter-spacing: -4px;
+        }
+        
+        .main.style1 .content {
+          opacity: 1.0;
+
+          -moz-transition: all 1s ease;
+          -webkit-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+          transition: all 1s ease;
+          
+          -moz-transform: translateZ(0);
+          -webkit-transform: translateZ(0);
+          -o-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+        
+      .main.style1.inactive {
+      }
+      
+        .main.style1.inactive .content {
+          opacity: 0;
+        }
+
+  .fa{
+    text-decoration: none;
+  }
+      .fa-fullscreen:before{content:"/f0b2";}
+
+  
+   #intro {
+    background: url('../images/intro.jpg');
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
+  }
+
+  body{
+    background-color: #99FFCC;
+  }
+
+  a {
+    color: #660000;
+
+    -moz-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+
+  #logo {
+    position: absolute;
+    left: 1em;
+    top: 0;
+    height: 2em;
+    line-height: 1.5em;
+    letter-spacing: -1px;
+  }
+  
+    #logo a {
+      font-size: 1.25em;
+    }
+  
+  #nav {
+    position: absolute;
+    right: 0.5em;
+    top: 0;
+    height: 3em;
+    line-height: 3em;
+  }
+
+    #nav ul {
+      margin: 0;
+    }
+
+      #nav ul li {
+        display: inline-block;
+        margin-left: 0.5em;
+        font-size: 0.9em;
+      }
+      
+        #nav ul li a {
+          display: block;
+          color: inherit;
+          text-decoration: none;
+          height: 3em;
+          line-height: 3em;
+          padding: 0 0.5em 0 0.5em;
+          outline: 0;
+        }
+
+  </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -12,24 +168,46 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->        
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-      <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-      <link rel="stylesheet" type="text/css" href="css/c3.min.css">
-      <link rel="stylesheet" type="text/css" href="css/visualization.css">
-      <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
-
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+     <link rel="stylesheet" type="text/css" href="css/c3.min.css">
+    <link rel="stylesheet" type="text/css" href="css/visualization.css">
 </head>
 
 <body>
-
+    <center>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/d3.min.js"></script>
     <script src="js/c3.min.js"></script>
-    
-    
-    {{{body}}}    
-    
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <header id="header">
+
+        <!-- Logo -->
+          <h1 id="logo">Assignment 2</h1>
+        
+        <!-- Nav -->
+          <nav id="nav">
+            <ul>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/account">Account</a></li>
+              <li><a href="/c3visualization">C3 Insta</a></li>
+              <li><a href="/visualization">D3 Insta</a></li>
+              <li><a href="/photos">D3 FB</a></li>
+            </ul>
+          </nav>
+
+      </header>
+
+    <section id="intro" class="main style1 fullscreen">
+    <div class="content container small">
+    {{{body}}}  
+
+    </center>  
+    </div>
+</section>
+
 </body>
 </html>
 
